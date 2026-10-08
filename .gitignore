@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+*.bak
+
+# Packaged extension artifacts (regenerate via chrome://extensions)
+*.crx
+*.pem
+*.zip
+
+# Python leftovers (no backend ships with this project anymore)
+__pycache__/
+*.py[cod]
+.venv/
+venv/

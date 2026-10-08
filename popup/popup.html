@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeakPlay</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <div class="logo">PP</div>
+      <div>
+        <h1>PeakPlay</h1>
+        <p class="subtitle">YouTube Smart Skip &amp; Highlights</p>
+      </div>
+      <label class="switch" title="Enable / Disable PeakPlay">
+        <input type="checkbox" id="enabledToggle" checked />
+        <span class="track"><span class="thumb"></span></span>
+      </label>
+    </div>
+
+    <div class="section">
+      <div class="row">
+        <label for="kSlider">Sensitivity <span class="hint">(k-factor)</span></label>
+        <span id="kValue" class="pill">0.50</span>
+      </div>
+      <input type="range" id="kSlider" min="0.1" max="1.5" step="0.05" value="0.5" />
+      <div class="scale"><span>More highlights</span><span>Fewer highlights</span></div>
+    </div>
+
+    <div class="section context">
+      <div class="row">
+        <label class="check"><input type="checkbox" id="contextToggle" checked /> Keep context bites</label>
+        <span id="skipValue" class="pill">45s</span>
+      </div>
+      <input type="range" id="skipSlider" min="15" max="120" step="5" value="45" />
+      <div class="scale"><span>More context</span><span>More skipping</span></div>
+      <p class="hint-line">Never skip longer than this without playing a short bite, so story stays followable.</p>
+      <div class="row" style="margin-top:8px;">
+        <label class="check"><input type="checkbox" id="gentleToggle" checked /> Gentle skips (only at full stops)</label>
+      </div>
+      <p class="hint-line">Waits for a sentence-ending full stop before jumping, so speech is never cut mid-sentence.</p>
+    </div>
+
+    <div class="section presets">
+      <div class="preset-row">
+        <button data-preset="story" title="Keep most of the video">Full story</button>
+        <button data-preset="balanced" class="active" title="Balanced highlights + context">Balanced</button>
+        <button data-preset="strict" title="Only top moments">Strict</button>
+      </div>
+      <button id="perVideoBtn" class="ghost-btn" title="Disable skipping for this video only">Don't skip this video</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">Skipped</span>
+        <span class="stat-value" id="percentSkipped">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time saved</span>
+        <span class="stat-value" id="timeSaved">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Peaks</span>
+        <span class="stat-value" id="peakCount">—</span>
+      </div>
+    </div>
+
+    <div class="coverage"><div id="coverageFill"></div></div>
+
+    <p id="statusLine" class="status">Connecting to YouTube tab…</p>
+    <p class="footnote">Threshold = &mu; + k&middot;&sigma; over Most-Replayed heatmap, snapped to sentence boundaries.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

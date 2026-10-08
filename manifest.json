@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "PeakPlay for YouTube",
+  "version": "1.2.0",
+  "description": "Auto-skip low-engagement YouTube segments using Most-Replayed heatmap plus transcript-aware sentence snapping.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "PeakPlay",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "toggle-peakplay": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Toggle PeakPlay on/off"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": [
+        "content/signal_processor.js",
+        "content/transcript_snapper.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content/*"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}
