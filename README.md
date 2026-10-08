@@ -12,9 +12,6 @@ Created by **Pratham Prajapati**.
 
 ![PeakPlay timeline overlay — green keep segments, red skipped gaps](demo/demo1-frame3.jpg)
 
-| ![Demo 1](demo/demo1-frame1.jpg) | ![Demo 1](demo/demo1-frame4.jpg) |
-| ![Demo 2](demo/demo2-frame1.jpg) | ![Demo 2](demo/demo2-frame4.jpg) |
-
 ![YouTube Most-Replayed heatmap with PeakPlay keep/skip overlay](Heat-map-image.png)
 
 *Full demo videos (`Demo-Video.mp4`, `Demo-Video-2.mp4`) are gitignored and stay local —
