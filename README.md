@@ -8,15 +8,17 @@ Created by **Pratham Prajapati**.
 
 ## Demo
 
-<video src="Demo-Video.mp4" controls width="100%"></video>
+![PeakPlay popup: 61% skipped, 30 peaks, timeline overlay on the player](demo/demo1-frame2.jpg)
 
-<video src="Demo-Video-2.mp4" controls width="100%"></video>
+![PeakPlay timeline overlay — green keep segments, red skipped gaps](demo/demo1-frame3.jpg)
+
+| ![Demo 1](demo/demo1-frame1.jpg) | ![Demo 1](demo/demo1-frame4.jpg) |
+| ![Demo 2](demo/demo2-frame1.jpg) | ![Demo 2](demo/demo2-frame4.jpg) |
 
 ![YouTube Most-Replayed heatmap with PeakPlay keep/skip overlay](Heat-map-image.png)
 
-*The demo files (`Demo-Video.mp4`, `Demo-Video-2.mp4`) live next to this README — they play here when
-viewed locally. (They're gitignored so they won't bloat the repo; for GitHub, upload
-them as release assets or unlisted YouTube videos and link them here.)*
+*Full demo videos (`Demo-Video.mp4`, `Demo-Video-2.mp4`) are gitignored and stay local —
+the frames above are the committable highlights.*
 
 ## Load the extension
 1. Chrome → `chrome://extensions` → Developer mode → Load unpacked

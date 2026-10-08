@@ -13,6 +13,12 @@ desktop.ini
 *.tmp
 *.bak
 
+# Full demo videos stay local — key frames in demo/ are committed instead
+*.mp4
+*.mkv
+*.mov
+*.webm
+
 # Packaged extension artifacts (regenerate via chrome://extensions)
 *.crx
 *.pem
